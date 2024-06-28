@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="body-wrapper">
+      <div class="box">
+        <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Department</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let employee of EmployeeList; let i = index">
+            <tr>
+              <td>{{ employee.id }}</td>
+              <td>{{ employee.name }}</td>
+              <td>{{ employee.position }}</td>
+              <td>{{ employee.department }}</td>
+              <td><button  (click)="showDetails(i)">details</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box1">
+        <app-employee-detail [employee]="DetailsList"></app-employee-detail>
+      </div>
+    </div>
+  </body>
+</html>
